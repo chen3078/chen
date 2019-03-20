@@ -1,0 +1,21 @@
+list=[1,2,2,2,3,5]                   //设置一个数组
+def aa(num,numbers,i,x,y):
+b=list[i-1]
+for c in list:                       //用for循环，if记录每个数的次数，出现一次加一
+if c==b:
+numbers+=1
+x=c
+if numbers>num:
+num=numbers                          //出现的次数多的值就给numbers
+y=x
+if i<len(list):                      //在这个数列的长度内去一一记录每个数出现的次数，最终求得结果
+i+=1
+aa(num,0,i,x,y)
+else
+print("众数：",y,"重数：",num)
+aa(0,0,0,0,0)
+
+
+算法复杂性：我认为有n个数那么每个数都需要经过n-1次比较，也就是需要执行x步，共执行了n次这条语句，那么在总运行时间中占的时间为x*n，计算总运行时间T，求得：
+T=x1*n+x2*(n-1)+x3*(n-1)......+xi*(n-1)
+因此求得时间复杂度为O(n)
